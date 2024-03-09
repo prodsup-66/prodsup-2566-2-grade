@@ -27,7 +27,7 @@ function App() {
       alert("Student ID is not correct");
       return;
     }
-    if (student.email !== email) {
+    if (student.email.toLowerCase().trim() !== email.toLowerCase().trim()) {
       alert("Email is not correct");
       return;
     }
