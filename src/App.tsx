@@ -70,7 +70,7 @@ function App() {
             onChange={handleChange}
             value={email}
           />
-          <label htmlFor="course-number">Course Number (ุ6 digit)</label>
+          <label htmlFor="course-number">Course Number (6 digit)</label>
           <input
             type="number"
             name="course-number"
@@ -87,19 +87,27 @@ function App() {
           {grade && (
             <>
               <article>
-                <pre>{JSON.stringify(grade, null, 2)}</pre>
+                <pre>{JSON.stringify(grade, null, 8)}</pre>
               </article>
               <article>
                 <h4>คำอธิบาย</h4>
                 <ul>
                   <li>
-                    คำนำหน้า NR = อ.นิรันดร์, AC = อ.อนิรุท, SR = อ.ศักดิ์เกษม
+                    คำนำหน้า <kbd>NR = อ.นิรันดร์</kbd>
+                    {"  "}
+                    <kbd>AC = อ.อนิรุท</kbd>
+                    {"  "} <kbd>SR = อ.ศักดิ์เกษม</kbd>
+                  </li>
+                  <li>เลขในวงเล็บคือคะแนนดิบเต็ม</li>
+                  <li>เลขในวงเล็บที่มี % คือ เปอร์เช็นต์ของคะแนนตัดเกรด</li>
+                  <li>
+                    <kbd>"NR - Class (5)": 4</kbd> แปลว่า คะแนนเข้าห้องเรียน
+                    อ.นิรันดร์ เต็ม 5 เราได้ 4
                   </li>
                   <li>
-                    เลขในวงเล็บคือคะแนนดิบเต็ม อย่างเช่น (5)
-                    คือรายการที่มีคะแนนดิบเต็ม 5
+                    <kbd>"NR - Class (%3)": 2.4</kbd> แปลว่า คะแนนเข้าห้องเรียน
+                    อ.นิรันดร์ เต็ม 3% ของคะแนนเกรด เราทำให้ 2.4%
                   </li>
-                  <li>เลขในวงเล็บที่มี % คือคะแนนที่สเกลให้เป็นคะแนนตัดเกรด</li>
                 </ul>
               </article>
             </>
